@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState} from "react";
 
 const Favourites = ({ array, listName }) => {
-  const favList = [];
+  const [favList, setFavList] = useState([]);  
   function pushPop(){
-    if (listName || favList){
-        return listName.pop(array) || listName.push(favList);
+    if (listName && favList){
+        return setFavList(array.listName);
     }else {
-        return favList.push(listName) || array.push(listName);
+        return setFavList(favList.listName);
     }
   };
   return (
     <div>
-      <ul>
+      <ul>Favourites : 
         <li onClick={pushPop}></li>
       </ul>
     </div>
