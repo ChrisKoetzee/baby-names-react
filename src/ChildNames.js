@@ -1,14 +1,18 @@
 import React from "react";
-import './App.css';
 
-const ChildNames = ({array}) => {
-    const alphabetic = [...array].sort((a, b) => a.name > b.name ? 1 : -1);
-    return (
-        {alphabetic.array.map((child) => (
-            child.sex===m ? <ul><li style="background-color: blue;">{child.name}</li></ul> : <ul><li style="background-color: pink;">{child.name}</li></ul>
-    ))}
-    )
+const ChildNames = ({ array }) => {
+//   const alphabetic = [...array].sort((a, b) => (a.name > b.name ? 1 : -1));
+  return (
+    <div key={array.id}>
+      {array.map((child, index) => (
+        child.sex === "m" ? (
+            <button style={{backgroundColor: 'blue'}} key={index.id}>{child.name}</button>
+        ) : (
+            <button style={{backgroundColor: 'pink'}} key={index.id}>{child.name}</button>
+        )
+      ))}
+    </div>
+  );
 };
-console.log(nameData);
 
 export default ChildNames;

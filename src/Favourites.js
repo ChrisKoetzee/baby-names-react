@@ -1,14 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Favourites = ({array, listName}) =>{
-    const favList = [];
-        return (
-        <div>
-        <ul>
-        <li onClick={array.pop(listName) || favList.pop(listName)}>{listName.push(favList) || listName.push(array)}</li>
-        </ul>
-        </div>
-    )
+const Favourites = ({ array, listName }) => {
+  const favList = [];
+  function pushPop(){
+    if (listName || favList){
+        return listName.pop(array) || listName.push(favList);
+    }else {
+        return favList.push(listName) || array.push(listName);
+    }
+  };
+  return (
+    <div>
+      <ul>
+        <li onClick={pushPop}></li>
+      </ul>
+    </div>
+  );
 };
 
 export default Favourites;
