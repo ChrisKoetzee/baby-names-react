@@ -1,12 +1,12 @@
 import React, { useState} from "react";
 
-const Favourites = ({ array, listName }) => {
+const Favourites = ({listName}) => {
   const [favList, setFavList] = useState([]);  
   function pushPop(){
-    if (listName && favList){
-        return setFavList(array.listName);
+    if (favList){
+        return setFavList(listName--);
     }else {
-        return setFavList(favList.listName);
+        return setFavList(listName++);
     }
   };
   return (
